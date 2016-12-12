@@ -4,6 +4,7 @@
  */
 package lovivido;
 
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
 public class LoVivido {
@@ -25,14 +26,26 @@ public class LoVivido {
         dias = (anhos * 365);
         horas = (dias * 24);
 
-        JOptionPane.showMessageDialog(null, "Meses: " + meses, "Numero de meses vividos de " + nombre, JOptionPane.INFORMATION_MESSAGE);
+        getMesesVividos(meses, nombre);
 
-        JOptionPane.showMessageDialog(null, "Días: " + dias, "Numero de días vividos de " + nombre, JOptionPane.INFORMATION_MESSAGE);
+        getDiasVividos(dias, nombre);
 
-        JOptionPane.showMessageDialog(null, "Horas: " + horas, "Numero de horas vividos de " + nombre, JOptionPane.INFORMATION_MESSAGE);
+        getHorasVividas(horas, nombre);
 
         System.exit(0);
 
+    }
+
+    public static void getHorasVividas(int horas, String nombre) throws HeadlessException {
+        JOptionPane.showMessageDialog(null, "Horas: " + horas, "Numero de horas vividas de " + nombre, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public static void getDiasVividos(int dias, String nombre) throws HeadlessException {
+        JOptionPane.showMessageDialog(null, "Días: " + dias, "Numero de días vividos de " + nombre, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public static void getMesesVividos(int meses, String nombre) throws HeadlessException {
+        JOptionPane.showMessageDialog(null, "Meses: " + meses, "Numero de meses vividos de " + nombre, JOptionPane.INFORMATION_MESSAGE);
     }
 
 }
